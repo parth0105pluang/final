@@ -12,6 +12,13 @@ app.get('/api/products',(req,res)=>{
     })
     res.json(products)
 })
+app.get('/api/products/:productID',(req,res)=>{
+    //console.log(req)
+    //console.log(req.params)
+    const {productID} = req.params
+    const singleProduct = products.find((product)=>product.id===Number(productID))
+    res.json(singleProduct)
+})
 app.listen(8000, () => {
   console.log('server is listening on port 8000....')
 })

@@ -4,7 +4,7 @@ const morgan = require('morgan')
 const logger = require('./logger')
 const authorize = require('./authorize')
 //req => middleware => res
-app.use([authorize,logger])
+app.use(morgan('tiny'))
 
 app.get('/',(req,res)=>
 {
